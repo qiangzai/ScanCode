@@ -1,0 +1,28 @@
+//
+//  ScanCodePrefixHeader.pch
+//  ScanCode
+//
+//  Created by lizhongqiang on 2017/11/22.
+//  Copyright © 2017年 lizhongqiang. All rights reserved.
+//
+
+#ifndef ScanCodePrefixHeader_pch
+#define ScanCodePrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//debug调试
+#ifdef DEBUG
+#define NSLog(...) NSLog(@"\n 在文件(%@)第(%d)行\n %@\n",[[NSString stringWithFormat:@"%s",__FILE__] componentsSeparatedByString:@"/"].lastObject,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+#define NSLog(...)
+#endif
+
+
+
+#ifdef __OBJC__
+#import <Masonry.h>
+#endif
+
+#endif /* ScanCodePrefixHeader_pch */
