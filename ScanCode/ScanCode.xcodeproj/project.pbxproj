@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296BA78E1FD7EAD6002712DF /* GFBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA78D1FD7EAD6002712DF /* GFBaseView.m */; };
+		296BA7911FD7EAFB002712DF /* GFBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7901FD7EAFB002712DF /* GFBaseModel.m */; };
+		296BA7941FD7EB43002712DF /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7931FD7EB43002712DF /* Utility.m */; };
+		296BA7971FD7EBB2002712DF /* GFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7961FD7EBB2002712DF /* GFNetworkManager.m */; };
+		296BA79A1FD7EBCE002712DF /* GFScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7991FD7EBCE002712DF /* GFScanViewController.m */; };
+		296BA79D1FD7EDFF002712DF /* GFScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA79C1FD7EDFF002712DF /* GFScanView.m */; };
+		296BA7A01FD7EE15002712DF /* GFScanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA79F1FD7EE15002712DF /* GFScanModel.m */; };
+		296BA7A31FD7EE2A002712DF /* GFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7A21FD7EE2A002712DF /* GFMineViewController.m */; };
+		296BA7A61FD7EE3F002712DF /* GFMineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7A51FD7EE3F002712DF /* GFMineView.m */; };
+		296BA7A91FD7EE50002712DF /* GFMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7A81FD7EE50002712DF /* GFMineModel.m */; };
+		296BA7AC1FD7EE68002712DF /* GFHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7AB1FD7EE68002712DF /* GFHistoryViewController.m */; };
+		296BA7AF1FD7EE7B002712DF /* GFHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7AE1FD7EE7B002712DF /* GFHistoryView.m */; };
+		296BA7B21FD7EE8E002712DF /* GFHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7B11FD7EE8E002712DF /* GFHistoryModel.m */; };
 		2984F8941FB938E4009DF65E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2984F8931FB938E4009DF65E /* AppDelegate.m */; };
 		2984F8971FB938E4009DF65E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2984F8961FB938E4009DF65E /* ViewController.m */; };
 		2984F89A1FB938E4009DF65E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2984F8981FB938E4009DF65E /* Main.storyboard */; };
@@ -43,6 +56,32 @@
 /* Begin PBXFileReference section */
 		07D9D7BFD07D7B16468AE6F5 /* libPods-ScanCode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanCode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C768F678641CAAB4F298E0 /* libPods-ScanCodeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanCodeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		296BA78C1FD7EAD6002712DF /* GFBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBaseView.h; sourceTree = "<group>"; };
+		296BA78D1FD7EAD6002712DF /* GFBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBaseView.m; sourceTree = "<group>"; };
+		296BA78F1FD7EAFB002712DF /* GFBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBaseModel.h; sourceTree = "<group>"; };
+		296BA7901FD7EAFB002712DF /* GFBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBaseModel.m; sourceTree = "<group>"; };
+		296BA7921FD7EB43002712DF /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		296BA7931FD7EB43002712DF /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		296BA7951FD7EBB2002712DF /* GFNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFNetworkManager.h; sourceTree = "<group>"; };
+		296BA7961FD7EBB2002712DF /* GFNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFNetworkManager.m; sourceTree = "<group>"; };
+		296BA7981FD7EBCE002712DF /* GFScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFScanViewController.h; sourceTree = "<group>"; };
+		296BA7991FD7EBCE002712DF /* GFScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFScanViewController.m; sourceTree = "<group>"; };
+		296BA79B1FD7EDFF002712DF /* GFScanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFScanView.h; sourceTree = "<group>"; };
+		296BA79C1FD7EDFF002712DF /* GFScanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFScanView.m; sourceTree = "<group>"; };
+		296BA79E1FD7EE15002712DF /* GFScanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFScanModel.h; sourceTree = "<group>"; };
+		296BA79F1FD7EE15002712DF /* GFScanModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFScanModel.m; sourceTree = "<group>"; };
+		296BA7A11FD7EE2A002712DF /* GFMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFMineViewController.h; sourceTree = "<group>"; };
+		296BA7A21FD7EE2A002712DF /* GFMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFMineViewController.m; sourceTree = "<group>"; };
+		296BA7A41FD7EE3F002712DF /* GFMineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFMineView.h; sourceTree = "<group>"; };
+		296BA7A51FD7EE3F002712DF /* GFMineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFMineView.m; sourceTree = "<group>"; };
+		296BA7A71FD7EE50002712DF /* GFMineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFMineModel.h; sourceTree = "<group>"; };
+		296BA7A81FD7EE50002712DF /* GFMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFMineModel.m; sourceTree = "<group>"; };
+		296BA7AA1FD7EE68002712DF /* GFHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFHistoryViewController.h; sourceTree = "<group>"; };
+		296BA7AB1FD7EE68002712DF /* GFHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFHistoryViewController.m; sourceTree = "<group>"; };
+		296BA7AD1FD7EE7B002712DF /* GFHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFHistoryView.h; sourceTree = "<group>"; };
+		296BA7AE1FD7EE7B002712DF /* GFHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFHistoryView.m; sourceTree = "<group>"; };
+		296BA7B01FD7EE8E002712DF /* GFHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFHistoryModel.h; sourceTree = "<group>"; };
+		296BA7B11FD7EE8E002712DF /* GFHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFHistoryModel.m; sourceTree = "<group>"; };
 		2984F88F1FB938E4009DF65E /* ScanCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2984F8921FB938E4009DF65E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2984F8931FB938E4009DF65E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -170,6 +209,8 @@
 		2984F8E71FC562DB009DF65E /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				296BA7921FD7EB43002712DF /* Utility.h */,
+				296BA7931FD7EB43002712DF /* Utility.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -186,6 +227,8 @@
 		2984F8E91FC562DC009DF65E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				296BA7951FD7EBB2002712DF /* GFNetworkManager.h */,
+				296BA7961FD7EBB2002712DF /* GFNetworkManager.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -233,6 +276,8 @@
 		299D254C1FCEEB1200418BFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				296BA79E1FD7EE15002712DF /* GFScanModel.h */,
+				296BA79F1FD7EE15002712DF /* GFScanModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +285,8 @@
 		299D254D1FCEEB1200418BFE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				296BA79B1FD7EDFF002712DF /* GFScanView.h */,
+				296BA79C1FD7EDFF002712DF /* GFScanView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +294,8 @@
 		299D254E1FCEEB1200418BFE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				296BA7981FD7EBCE002712DF /* GFScanViewController.h */,
+				296BA7991FD7EBCE002712DF /* GFScanViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -254,6 +303,8 @@
 		299D254F1FCEEB1C00418BFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				296BA7A71FD7EE50002712DF /* GFMineModel.h */,
+				296BA7A81FD7EE50002712DF /* GFMineModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +312,8 @@
 		299D25501FCEEB1C00418BFE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				296BA7A11FD7EE2A002712DF /* GFMineViewController.h */,
+				296BA7A21FD7EE2A002712DF /* GFMineViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -268,6 +321,8 @@
 		299D25511FCEEB1C00418BFE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				296BA7A41FD7EE3F002712DF /* GFMineView.h */,
+				296BA7A51FD7EE3F002712DF /* GFMineView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +330,8 @@
 		299D25521FCEEB2400418BFE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				296BA7AA1FD7EE68002712DF /* GFHistoryViewController.h */,
+				296BA7AB1FD7EE68002712DF /* GFHistoryViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -282,6 +339,8 @@
 		299D25531FCEEB2400418BFE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				296BA7AD1FD7EE7B002712DF /* GFHistoryView.h */,
+				296BA7AE1FD7EE7B002712DF /* GFHistoryView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,6 +348,8 @@
 		299D25541FCEEB2400418BFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				296BA7B01FD7EE8E002712DF /* GFHistoryModel.h */,
+				296BA7B11FD7EE8E002712DF /* GFHistoryModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,6 +368,8 @@
 		299D25561FCEEB2F00418BFE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				296BA78C1FD7EAD6002712DF /* GFBaseView.h */,
+				296BA78D1FD7EAD6002712DF /* GFBaseView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +377,8 @@
 		299D25571FCEEB2F00418BFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				296BA78F1FD7EAFB002712DF /* GFBaseModel.h */,
+				296BA7901FD7EAFB002712DF /* GFBaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -630,12 +695,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296BA7B21FD7EE8E002712DF /* GFHistoryModel.m in Sources */,
+				296BA7A61FD7EE3F002712DF /* GFMineView.m in Sources */,
 				299D25421FCEE8CD00418BFE /* GFBaseViewController.m in Sources */,
+				296BA7A01FD7EE15002712DF /* GFScanModel.m in Sources */,
+				296BA7911FD7EAFB002712DF /* GFBaseModel.m in Sources */,
 				299D25481FCEE9D100418BFE /* GFBaseNavigationController.m in Sources */,
+				296BA7A31FD7EE2A002712DF /* GFMineViewController.m in Sources */,
+				296BA7971FD7EBB2002712DF /* GFNetworkManager.m in Sources */,
 				2984F8971FB938E4009DF65E /* ViewController.m in Sources */,
+				296BA7941FD7EB43002712DF /* Utility.m in Sources */,
+				296BA7AC1FD7EE68002712DF /* GFHistoryViewController.m in Sources */,
+				296BA78E1FD7EAD6002712DF /* GFBaseView.m in Sources */,
 				299D25451FCEE97C00418BFE /* UINavigationController+Additions.m in Sources */,
+				296BA7AF1FD7EE7B002712DF /* GFHistoryView.m in Sources */,
+				296BA79D1FD7EDFF002712DF /* GFScanView.m in Sources */,
 				2984F8A21FB938E4009DF65E /* main.m in Sources */,
 				2984F8941FB938E4009DF65E /* AppDelegate.m in Sources */,
+				296BA79A1FD7EBCE002712DF /* GFScanViewController.m in Sources */,
+				296BA7A91FD7EE50002712DF /* GFMineModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
