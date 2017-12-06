@@ -33,6 +33,7 @@
 		299D25481FCEE9D100418BFE /* GFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299D25471FCEE9D100418BFE /* GFBaseNavigationController.m */; };
 		4E491A01CCD43C945DAA91E1 /* libPods-ScanCodeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C768F678641CAAB4F298E0 /* libPods-ScanCodeTests.a */; };
 		725CE9CE3786D04F937C1DC2 /* libPods-ScanCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D7BFD07D7B16468AE6F5 /* libPods-ScanCode.a */; };
+		D5E961531FD7F5EB009CAD3D /* GFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E961521FD7F5EB009CAD3D /* GFTabBarController.m */; };
 		D6D1E47F83326724F800458F /* libPods-ScanCodeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F59002A6F47AC0D1ED1D8B40 /* libPods-ScanCodeUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,8 @@
 		8C3B27F5D4484332CEC61647 /* Pods-ScanCodeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCodeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCodeUITests/Pods-ScanCodeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A4080C93D769AF77A0466850 /* Pods-ScanCodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCodeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCodeTests/Pods-ScanCodeTests.release.xcconfig"; sourceTree = "<group>"; };
 		B55DB8F5D11F6C9D9A9E58A1 /* Pods-ScanCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCode/Pods-ScanCode.debug.xcconfig"; sourceTree = "<group>"; };
+		D5E961511FD7F5EB009CAD3D /* GFTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFTabBarController.h; sourceTree = "<group>"; };
+		D5E961521FD7F5EB009CAD3D /* GFTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFTabBarController.m; sourceTree = "<group>"; };
 		F59002A6F47AC0D1ED1D8B40 /* libPods-ScanCodeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanCodeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -361,6 +364,8 @@
 				299D25411FCEE8CD00418BFE /* GFBaseViewController.m */,
 				299D25461FCEE9D100418BFE /* GFBaseNavigationController.h */,
 				299D25471FCEE9D100418BFE /* GFBaseNavigationController.m */,
+				D5E961511FD7F5EB009CAD3D /* GFTabBarController.h */,
+				D5E961521FD7F5EB009CAD3D /* GFTabBarController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -707,6 +712,7 @@
 				296BA7941FD7EB43002712DF /* Utility.m in Sources */,
 				296BA7AC1FD7EE68002712DF /* GFHistoryViewController.m in Sources */,
 				296BA78E1FD7EAD6002712DF /* GFBaseView.m in Sources */,
+				D5E961531FD7F5EB009CAD3D /* GFTabBarController.m in Sources */,
 				299D25451FCEE97C00418BFE /* UINavigationController+Additions.m in Sources */,
 				296BA7AF1FD7EE7B002712DF /* GFHistoryView.m in Sources */,
 				296BA79D1FD7EDFF002712DF /* GFScanView.m in Sources */,
