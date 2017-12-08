@@ -7,6 +7,8 @@
 //
 
 #import "GFTabBarController.h"
+#import "GFScanViewController.h"
+#import "GFMineViewController.h"
 
 @interface GFTabBarController ()
 
@@ -18,6 +20,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        GFScanViewController *scanVC = [[GFScanViewController alloc] init];
+        scanVC.tabBarItem.title = @"扫描";
+        
+        GFMineViewController *mineVC = [[GFMineViewController alloc] init];
+        mineVC.tabBarItem.title = @"设置";
+        
+        self.viewControllers = [NSArray arrayWithObjects:scanVC,mineVC,nil];
+        self.selectedIndex = 0;
+        self.tabBar.translucent = YES;
+    }
+    return self;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -34,6 +34,7 @@
 		4E491A01CCD43C945DAA91E1 /* libPods-ScanCodeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C768F678641CAAB4F298E0 /* libPods-ScanCodeTests.a */; };
 		725CE9CE3786D04F937C1DC2 /* libPods-ScanCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D7BFD07D7B16468AE6F5 /* libPods-ScanCode.a */; };
 		D5E961531FD7F5EB009CAD3D /* GFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E961521FD7F5EB009CAD3D /* GFTabBarController.m */; };
+		D5E961BC1FDA75E4009CAD3D /* GFNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E961BB1FDA75E4009CAD3D /* GFNavigationBarView.m */; };
 		D6D1E47F83326724F800458F /* libPods-ScanCodeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F59002A6F47AC0D1ED1D8B40 /* libPods-ScanCodeUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,8 @@
 		B55DB8F5D11F6C9D9A9E58A1 /* Pods-ScanCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCode/Pods-ScanCode.debug.xcconfig"; sourceTree = "<group>"; };
 		D5E961511FD7F5EB009CAD3D /* GFTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFTabBarController.h; sourceTree = "<group>"; };
 		D5E961521FD7F5EB009CAD3D /* GFTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFTabBarController.m; sourceTree = "<group>"; };
+		D5E961BA1FDA75E4009CAD3D /* GFNavigationBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFNavigationBarView.h; sourceTree = "<group>"; };
+		D5E961BB1FDA75E4009CAD3D /* GFNavigationBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFNavigationBarView.m; sourceTree = "<group>"; };
 		F59002A6F47AC0D1ED1D8B40 /* libPods-ScanCodeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanCodeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -375,6 +378,8 @@
 			children = (
 				296BA78C1FD7EAD6002712DF /* GFBaseView.h */,
 				296BA78D1FD7EAD6002712DF /* GFBaseView.m */,
+				D5E961BA1FDA75E4009CAD3D /* GFNavigationBarView.h */,
+				D5E961BB1FDA75E4009CAD3D /* GFNavigationBarView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -709,6 +714,7 @@
 				296BA7A31FD7EE2A002712DF /* GFMineViewController.m in Sources */,
 				296BA7971FD7EBB2002712DF /* GFNetworkManager.m in Sources */,
 				2984F8971FB938E4009DF65E /* ViewController.m in Sources */,
+				D5E961BC1FDA75E4009CAD3D /* GFNavigationBarView.m in Sources */,
 				296BA7941FD7EB43002712DF /* Utility.m in Sources */,
 				296BA7AC1FD7EE68002712DF /* GFHistoryViewController.m in Sources */,
 				296BA78E1FD7EAD6002712DF /* GFBaseView.m in Sources */,

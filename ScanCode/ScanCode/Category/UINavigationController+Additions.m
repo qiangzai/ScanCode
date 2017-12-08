@@ -8,7 +8,7 @@
 
 #import "UINavigationController+Additions.h"
 #import <objc/runtime.h>
-#import "PSYBaseViewController.h"
+//#import "PSYBaseViewController.h"
 /**取消手势返回的控制器目录 */
 #define ControllerCancelSideSlip @"CancelSideSlip"
 @interface FullscreenPopGestureRecognizerDelegate : NSObject <UIGestureRecognizerDelegate>
@@ -37,7 +37,7 @@
         for (UIViewController * vc in self.navigationController.viewControllers) {
             if ([vc isKindOfClass:NSClassFromString(item[@"controller_name"])]){
                 if ([item[@"has_tip"] intValue]) {
-                    [((PSYBaseViewController *)vc) back];
+//                    [((PSYBaseViewController *)vc) back];
                 }
                 return NO;
             }

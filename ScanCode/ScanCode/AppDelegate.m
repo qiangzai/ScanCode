@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "GFTabBarController.h"
+#import "GFBaseNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    
+    GFTabBarController *tabbar = [[GFTabBarController alloc] init];
+    GFBaseNavigationController *nav = [[GFBaseNavigationController alloc] initWithRootViewController:tabbar];
+    self.window.rootViewController = nav;
+    
+    
     return YES;
 }
 
