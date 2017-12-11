@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "GFTabBarController.h"
 #import "GFBaseNavigationController.h"
+#import "GFScanViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -51,6 +53,15 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    UIViewController *viewController = [Utility getCurrentVC];
+    if ([viewController isKindOfClass:[GFScanViewController class]]) {
+        NSLog(@"执行动画");
+        GFScanViewController *scanVC = (GFScanViewController *)viewController;
+        [scanVC startAnimation];
+    }
+    
+    
 }
 
 

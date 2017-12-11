@@ -10,4 +10,6 @@
 
 @interface GFScanViewController : GFBaseViewController
 
+- (void)startAnimation;
+
 @end

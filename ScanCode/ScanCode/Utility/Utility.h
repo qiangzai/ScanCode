@@ -17,4 +17,11 @@
  */
 + (NSString *)getLocalAppVersion;
 
+/**
+ 获取当前显示的VC
+
+ @return 当前显示的VC
+ */
++ (UIViewController *)getCurrentVC;
+
 @end
