@@ -4,13 +4,13 @@
 //
 //  Created by lizhongqiang on 2017/11/13.
 //  Copyright © 2017年 lizhongqiang. All rights reserved.
-//
+//5a2e5697f43e483196000075
 
 #import "AppDelegate.h"
 #import "GFTabBarController.h"
 #import "GFBaseNavigationController.h"
 #import "GFScanViewController.h"
-
+#import <UMMobClick/MobClick.h>
 
 @interface AppDelegate ()
 
@@ -25,12 +25,40 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
     
+    [self firstRequest];
+    
+    
     GFTabBarController *tabbar = [[GFTabBarController alloc] init];
     GFBaseNavigationController *nav = [[GFBaseNavigationController alloc] initWithRootViewController:tabbar];
     self.window.rootViewController = nav;
     
+    [self configUMengMobClick];
+    
     
     return YES;
+}
+
+
+#pragma mark - UMeng
+- (void)configUMengMobClick {
+    UMConfigInstance.appKey = @"5a2e5697f43e483196000075";
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick setAppVersion:[Utility getLocalAppVersion]];
+    [MobClick startWithConfigure:UMConfigInstance];
+    
+#ifdef DEBUG
+    [MobClick setLogEnabled:YES];
+#else
+    //nothing
+#endif
+    
+}
+
+- (void)firstRequest {
+    //发送网络请求 用于第一次安装启动时弹出网络授权
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url];
+    [task resume];
 }
 
 
