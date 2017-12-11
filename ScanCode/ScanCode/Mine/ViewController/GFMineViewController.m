@@ -61,7 +61,7 @@
         [self.navigationController pushViewController:abountVC animated:YES];
     } else if (indexPath.row == 1) {
 //        UIImage *image = [UIImage imageNamed:@"Icon180.png"];
-        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[NSURL URLWithString:@"www.baidu.com"],@"我发现一个好玩的App"] applicationActivities:nil];
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[NSURL URLWithString:@"www.baidu.com"],@"感觉不怎么好用呢"] applicationActivities:nil];
         activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
             if (completed) {
                 NSLog(@"确定分享");
