@@ -9,6 +9,7 @@
 #import "GFScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "GFNavigationBarView.h"
+#import "UIImage+PSYTint.h"
 
 @interface GFScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 @property (nonatomic, strong) AVCaptureDevice *device;
@@ -242,7 +243,7 @@ static float scanWidth = 221.0f;
 
 - (UIImageView *)scanImgView {
     if (_scanImgView == nil) {
-        _scanImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"badge-scan"]];
+        _scanImgView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"badge-scan"] imageWithTintColor:kPSYColorWithHex(0x1e9e2e)]];
         _scanImgView.frame = CGRectMake((kPSYWidth - scanWidth) / 2, (kPSYHeight - scanWidth) / 2, scanWidth, scanWidth);
     }
     return _scanImgView;
@@ -251,7 +252,7 @@ static float scanWidth = 221.0f;
 - (UIImageView *)lineImgView {
     if (_lineImgView == nil) {
         _lineImgView = [[UIImageView alloc] init];
-        _lineImgView.image = [UIImage imageNamed:@"badge-scan-line"];
+        _lineImgView.image = [[UIImage imageNamed:@"badge-scan-line"] imageWithTintColor:kPSYColorWithHex(0x1e9e2e)];
         _lineImgView.frame = CGRectMake(0, 0, scanWidth, kPSYFitSize(7));
         _lineImgView.center = CGPointMake(kPSYWidth / 2, (kPSYHeight - scanWidth) / 2);
     }

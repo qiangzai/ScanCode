@@ -28,7 +28,7 @@
         GFScanViewController *scanVC = [[GFScanViewController alloc] init];
         scanVC.tabBarItem.image = [UIImage imageNamed:@"scan"];
         scanVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"scan"] imageWithTintColor:kPSYColorWithHex(0x1e9e2e)];
-        
+        scanVC.tabBarItem.title = @"扫描";
         
         GFMineViewController *mineVC = [[GFMineViewController alloc] init];
         mineVC.tabBarItem.image = [UIImage imageNamed:@"setup"];
@@ -39,7 +39,7 @@
         self.selectedIndex = 0;
         self.tabBar.translucent = YES;
         self.delegate = self;
-        
+        self.tabBar.tintColor = kPSYColorWithHex(0x1e9e2e);
     }
     return self;
 }
