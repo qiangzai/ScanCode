@@ -33,6 +33,12 @@
 		299D25481FCEE9D100418BFE /* GFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299D25471FCEE9D100418BFE /* GFBaseNavigationController.m */; };
 		4E491A01CCD43C945DAA91E1 /* libPods-ScanCodeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C768F678641CAAB4F298E0 /* libPods-ScanCodeTests.a */; };
 		725CE9CE3786D04F937C1DC2 /* libPods-ScanCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D7BFD07D7B16468AE6F5 /* libPods-ScanCode.a */; };
+		D5B680441FDE56C100C1B7AF /* GFAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B680431FDE56C100C1B7AF /* GFAlertController.m */; };
+		D5B680471FDE59C900C1B7AF /* GFGeneralView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B680461FDE59C900C1B7AF /* GFGeneralView.m */; };
+		D5B6804A1FDE6AE100C1B7AF /* GFMineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B680491FDE6AE100C1B7AF /* GFMineTableViewCell.m */; };
+		D5B6804D1FDE6AFF00C1B7AF /* GFBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B6804C1FDE6AFF00C1B7AF /* GFBaseTableViewCell.m */; };
+		D5B680521FDE716E00C1B7AF /* GFAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B680511FDE716E00C1B7AF /* GFAboutViewController.m */; };
+		D5B680551FDE808400C1B7AF /* UIImage+PSYTint.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B680531FDE808400C1B7AF /* UIImage+PSYTint.m */; };
 		D5E961531FD7F5EB009CAD3D /* GFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E961521FD7F5EB009CAD3D /* GFTabBarController.m */; };
 		D5E961BC1FDA75E4009CAD3D /* GFNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E961BB1FDA75E4009CAD3D /* GFNavigationBarView.m */; };
 		D6D1E47F83326724F800458F /* libPods-ScanCodeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F59002A6F47AC0D1ED1D8B40 /* libPods-ScanCodeUITests.a */; };
@@ -113,6 +119,21 @@
 		8C3B27F5D4484332CEC61647 /* Pods-ScanCodeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCodeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCodeUITests/Pods-ScanCodeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A4080C93D769AF77A0466850 /* Pods-ScanCodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCodeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCodeTests/Pods-ScanCodeTests.release.xcconfig"; sourceTree = "<group>"; };
 		B55DB8F5D11F6C9D9A9E58A1 /* Pods-ScanCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCode/Pods-ScanCode.debug.xcconfig"; sourceTree = "<group>"; };
+		D5B680411FDE522200C1B7AF /* GFDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFDefine.h; sourceTree = "<group>"; };
+		D5B680421FDE56C100C1B7AF /* GFAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFAlertController.h; sourceTree = "<group>"; };
+		D5B680431FDE56C100C1B7AF /* GFAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFAlertController.m; sourceTree = "<group>"; };
+		D5B680451FDE59C900C1B7AF /* GFGeneralView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFGeneralView.h; sourceTree = "<group>"; };
+		D5B680461FDE59C900C1B7AF /* GFGeneralView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFGeneralView.m; sourceTree = "<group>"; };
+		D5B680481FDE6AE100C1B7AF /* GFMineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFMineTableViewCell.h; sourceTree = "<group>"; };
+		D5B680491FDE6AE100C1B7AF /* GFMineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFMineTableViewCell.m; sourceTree = "<group>"; };
+		D5B6804B1FDE6AFF00C1B7AF /* GFBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBaseTableViewCell.h; sourceTree = "<group>"; };
+		D5B6804C1FDE6AFF00C1B7AF /* GFBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBaseTableViewCell.m; sourceTree = "<group>"; };
+		D5B6804E1FDE703700C1B7AF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		D5B6804F1FDE703800C1B7AF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		D5B680501FDE716E00C1B7AF /* GFAboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFAboutViewController.h; sourceTree = "<group>"; };
+		D5B680511FDE716E00C1B7AF /* GFAboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFAboutViewController.m; sourceTree = "<group>"; };
+		D5B680531FDE808400C1B7AF /* UIImage+PSYTint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PSYTint.m"; sourceTree = "<group>"; };
+		D5B680541FDE808400C1B7AF /* UIImage+PSYTint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PSYTint.h"; sourceTree = "<group>"; };
 		D5E961511FD7F5EB009CAD3D /* GFTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFTabBarController.h; sourceTree = "<group>"; };
 		D5E961521FD7F5EB009CAD3D /* GFTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFTabBarController.m; sourceTree = "<group>"; };
 		D5E961BA1FDA75E4009CAD3D /* GFNavigationBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFNavigationBarView.h; sourceTree = "<group>"; };
@@ -217,6 +238,13 @@
 			children = (
 				296BA7921FD7EB43002712DF /* Utility.h */,
 				296BA7931FD7EB43002712DF /* Utility.m */,
+				D5B680411FDE522200C1B7AF /* GFDefine.h */,
+				D5B680421FDE56C100C1B7AF /* GFAlertController.h */,
+				D5B680431FDE56C100C1B7AF /* GFAlertController.m */,
+				D5B680451FDE59C900C1B7AF /* GFGeneralView.h */,
+				D5B680461FDE59C900C1B7AF /* GFGeneralView.m */,
+				D5B680541FDE808400C1B7AF /* UIImage+PSYTint.h */,
+				D5B680531FDE808400C1B7AF /* UIImage+PSYTint.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -320,6 +348,8 @@
 			children = (
 				296BA7A11FD7EE2A002712DF /* GFMineViewController.h */,
 				296BA7A21FD7EE2A002712DF /* GFMineViewController.m */,
+				D5B680501FDE716E00C1B7AF /* GFAboutViewController.h */,
+				D5B680511FDE716E00C1B7AF /* GFAboutViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -329,6 +359,8 @@
 			children = (
 				296BA7A41FD7EE3F002712DF /* GFMineView.h */,
 				296BA7A51FD7EE3F002712DF /* GFMineView.m */,
+				D5B680481FDE6AE100C1B7AF /* GFMineTableViewCell.h */,
+				D5B680491FDE6AE100C1B7AF /* GFMineTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,6 +412,8 @@
 				296BA78D1FD7EAD6002712DF /* GFBaseView.m */,
 				D5E961BA1FDA75E4009CAD3D /* GFNavigationBarView.h */,
 				D5E961BB1FDA75E4009CAD3D /* GFNavigationBarView.m */,
+				D5B6804B1FDE6AFF00C1B7AF /* GFBaseTableViewCell.h */,
+				D5B6804C1FDE6AFF00C1B7AF /* GFBaseTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -511,7 +545,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 2984F8861FB938E4009DF65E;
@@ -706,8 +739,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				296BA7B21FD7EE8E002712DF /* GFHistoryModel.m in Sources */,
+				D5B6804A1FDE6AE100C1B7AF /* GFMineTableViewCell.m in Sources */,
 				296BA7A61FD7EE3F002712DF /* GFMineView.m in Sources */,
 				299D25421FCEE8CD00418BFE /* GFBaseViewController.m in Sources */,
+				D5B680441FDE56C100C1B7AF /* GFAlertController.m in Sources */,
+				D5B680471FDE59C900C1B7AF /* GFGeneralView.m in Sources */,
 				296BA7A01FD7EE15002712DF /* GFScanModel.m in Sources */,
 				296BA7911FD7EAFB002712DF /* GFBaseModel.m in Sources */,
 				299D25481FCEE9D100418BFE /* GFBaseNavigationController.m in Sources */,
@@ -715,7 +751,10 @@
 				296BA7971FD7EBB2002712DF /* GFNetworkManager.m in Sources */,
 				2984F8971FB938E4009DF65E /* ViewController.m in Sources */,
 				D5E961BC1FDA75E4009CAD3D /* GFNavigationBarView.m in Sources */,
+				D5B6804D1FDE6AFF00C1B7AF /* GFBaseTableViewCell.m in Sources */,
+				D5B680551FDE808400C1B7AF /* UIImage+PSYTint.m in Sources */,
 				296BA7941FD7EB43002712DF /* Utility.m in Sources */,
+				D5B680521FDE716E00C1B7AF /* GFAboutViewController.m in Sources */,
 				296BA7AC1FD7EE68002712DF /* GFHistoryViewController.m in Sources */,
 				296BA78E1FD7EAD6002712DF /* GFBaseView.m in Sources */,
 				D5E961531FD7F5EB009CAD3D /* GFTabBarController.m in Sources */,
@@ -765,6 +804,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2984F8991FB938E4009DF65E /* Base */,
+				D5B6804E1FDE703700C1B7AF /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -773,6 +813,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2984F89E1FB938E4009DF65E /* Base */,
+				D5B6804F1FDE703800C1B7AF /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -784,6 +825,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -839,6 +881,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -897,7 +940,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzq.ScanCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -914,7 +957,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzq.ScanCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

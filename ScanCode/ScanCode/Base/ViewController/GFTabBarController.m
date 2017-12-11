@@ -9,8 +9,9 @@
 #import "GFTabBarController.h"
 #import "GFScanViewController.h"
 #import "GFMineViewController.h"
+#import "UIImage+PSYTint.h"
 
-@interface GFTabBarController ()
+@interface GFTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -25,14 +26,20 @@
     self = [super init];
     if (self) {
         GFScanViewController *scanVC = [[GFScanViewController alloc] init];
-        scanVC.tabBarItem.title = @"扫描";
+        scanVC.tabBarItem.image = [UIImage imageNamed:@"scan"];
+        scanVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"scan"] imageWithTintColor:kPSYColorWithHex(0x1e9e2e)];
+        
         
         GFMineViewController *mineVC = [[GFMineViewController alloc] init];
+        mineVC.tabBarItem.image = [UIImage imageNamed:@"setup"];
+        mineVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"setup"] imageWithTintColor:kPSYColorWithHex(0x1e9e2e)];
         mineVC.tabBarItem.title = @"设置";
         
         self.viewControllers = [NSArray arrayWithObjects:scanVC,mineVC,nil];
         self.selectedIndex = 0;
         self.tabBar.translucent = YES;
+        self.delegate = self;
+        
     }
     return self;
 }
@@ -43,6 +50,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UITabBarControllerDelegate
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    if (tabBarController.selectedIndex == 0) {
+        self.navigationItem.title = nil;
+    } else if (tabBarController.selectedIndex == 1) {
+        self.navigationItem.title = @"设置";
+    }
+}
 /*
 #pragma mark - Navigation
 

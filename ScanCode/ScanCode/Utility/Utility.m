@@ -10,4 +10,12 @@
 
 @implementation Utility
 
+//获取当前版本号
++ (NSString *)getLocalAppVersion {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *version = [dict objectForKey:@"CFBundleShortVersionString"];
+    return version;
+}
+
 @end

@@ -23,6 +23,10 @@
 
 #ifdef __OBJC__
 #import <Masonry.h>
+#import "GFDefine.h"
+#import "GFAlertController.h"
+#import "GFGeneralView.h"
+#import "Utility.h"
 #endif
 
 #endif /* ScanCodePrefixHeader_pch */

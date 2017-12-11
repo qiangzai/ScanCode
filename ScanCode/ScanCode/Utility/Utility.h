@@ -10,4 +10,11 @@
 
 @interface Utility : NSObject
 
+/**
+ 获得当前版本号
+
+ @return 当前版本号
+ */
++ (NSString *)getLocalAppVersion;
+
 @end

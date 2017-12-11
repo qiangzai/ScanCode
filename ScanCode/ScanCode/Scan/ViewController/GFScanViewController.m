@@ -8,8 +8,9 @@
 
 #import "GFScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "GFNavigationBarView.h"
 
-@interface GFScanViewController ()
+@interface GFScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 @property (nonatomic, strong) AVCaptureDevice *device;
 @property (nonatomic, strong) AVCaptureDeviceInput *input;
 @property (nonatomic, strong) AVCaptureMetadataOutput *output;
@@ -24,6 +25,10 @@
  */
 @property (nonatomic, strong) UIImageView *lineImgView;
 
+@property (nonatomic, strong) UILabel *tipLabel;
+
+@property (nonatomic, strong) GFNavigationBarView *navBarView;
+
 @property (nonatomic, strong) UIView *topView;
 @property (nonatomic, strong) UIView *leftView;
 @property (nonatomic, strong) UIView *rightView;
@@ -31,16 +36,158 @@
 
 @end
 
+static float scanWidth = 221.0f;
+
+
 @implementation GFScanViewController
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.session startRunning];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self startAnimation];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor grayColor];
+    
+    [self.view addSubview:self.navBarView];
+    [self startLoadScanView];
+    
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+        if (granted) {
+            [self performSelectorOnMainThread:@selector(startScanWithCamera) withObject:nil waitUntilDone:NO];
+        } else {
+            [self performSelectorOnMainThread:@selector(cameraAuthDenied) withObject:nil waitUntilDone:NO];
+        }
+    }];
+}
+
+- (void)startLoadScanView {
+    [self startScan];
+    
+    [self.view addSubview:self.scanImgView];
+    [self.view addSubview:self.lineImgView];
+    [self.view addSubview:self.tipLabel];
+    [self.tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.top.equalTo(self.scanImgView.mas_bottom).with.offset(30);
+    }];
+    
+    [self.view addSubview:self.topView];
+    [self.view addSubview:self.leftView];
+    [self.view addSubview:self.rightView];
+    [self.view addSubview:self.bottomView];
+    [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.view);
+        make.bottom.equalTo(self.scanImgView.mas_top);
+        make.top.equalTo(self.navBarView.mas_bottom);
+    }];
+    [self.leftView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.scanImgView.mas_top);
+        make.bottom.equalTo(self.scanImgView.mas_bottom);
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.scanImgView.mas_left);
+    }];
+    [self.rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.scanImgView.mas_top);
+        make.bottom.equalTo(self.scanImgView.mas_bottom);
+        make.left.equalTo(self.scanImgView.mas_right);
+        make.right.equalTo(self.view.mas_right);
+    }];
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.view);
+//        make.bottom.left.and.right.equalTo(self.view);
+        make.top.equalTo(self.scanImgView.mas_bottom);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(100);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - event
+- (void)startScan {
+    if (![self.session canAddInput:self.input]) {
+        return;
+    }
+    [self.session addInput:self.input];
+    
+    if (![self.session canAddOutput:self.output]) {
+        return;
+    }
+    [self.session addOutput:self.output];
+    
+    self.output.metadataObjectTypes = self.output.availableMetadataObjectTypes;
+    [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    
+    [self.view.layer insertSublayer:self.previewLayer atIndex:0];
+    self.previewLayer.frame = self.view.bounds;
+}
+
+- (void)startAnimation {
+    self.lineImgView.center = CGPointMake(kPSYWidth / 2, (kPSYHeight - scanWidth) / 2);
+    [UIView animateWithDuration:3.0f delay:0 options:UIViewAnimationOptionRepeat animations:^{
+        self.lineImgView.center = CGPointMake(kPSYWidth / 2, (kPSYHeight + scanWidth - kPSYFitSize(7)) / 2);
+    } completion:^(BOOL finished) {
+        //                self.lineImgView.center = CGPointMake(kPSYWidth / 2, (kPSYHeight - scanWidth) / 2);
+    }];
+}
+
+- (void)startScanWithCamera {
+    [self.session startRunning];
+}
+
+- (void)cameraAuthDenied {
+    [GFAlertController presentAlertViewForController:self title:nil message:@"请在手机的“设置-隐私-相机”选项中，允许使用相机。" confirmTitle:@"好" handler:^{
+        
+    }];
+    
+}
+
+#pragma mark - AVCaptureMetadataOutputObjectsDelegate
+- (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
+    
+    
+    if (![[metadataObjects lastObject] isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
+        [self.session startRunning];
+        return;
+    }
+    
+    AVMetadataMachineReadableCodeObject *object = [metadataObjects lastObject];
+    if (object.stringValue == nil) {
+        [self.session startRunning];
+    }
+    
+    NSLog(@"code = %@",object.stringValue);
+    NSString *code = object.stringValue;
+    
+    [GFAlertController presentAlertViewForController:self title:@"扫描成功" message:code cancelTitle:@"取消" confirmTitle:@"复制此信息" cancel:^{
+        
+    } confirm:^{
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = code;
+        
+    }];
+    
+//    [self.session stopRunning];
+    
+    
+    
 }
 
 
@@ -92,5 +239,75 @@
     }
     return _previewLayer;
 }
+
+- (UIImageView *)scanImgView {
+    if (_scanImgView == nil) {
+        _scanImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"badge-scan"]];
+        _scanImgView.frame = CGRectMake((kPSYWidth - scanWidth) / 2, (kPSYHeight - scanWidth) / 2, scanWidth, scanWidth);
+    }
+    return _scanImgView;
+}
+
+- (UIImageView *)lineImgView {
+    if (_lineImgView == nil) {
+        _lineImgView = [[UIImageView alloc] init];
+        _lineImgView.image = [UIImage imageNamed:@"badge-scan-line"];
+        _lineImgView.frame = CGRectMake(0, 0, scanWidth, kPSYFitSize(7));
+        _lineImgView.center = CGPointMake(kPSYWidth / 2, (kPSYHeight - scanWidth) / 2);
+    }
+    return _lineImgView;
+}
+
+- (UILabel *)tipLabel {
+    if (_tipLabel == nil) {
+        _tipLabel = [GFGeneralView createLabelFont:[UIFont systemFontOfSize:16] labelColor:[UIColor whiteColor]];
+        _tipLabel.text = @"请对准二维码进行扫描";
+    }
+    return _tipLabel;
+}
+
+- (GFNavigationBarView *)navBarView {
+    if (_navBarView == nil) {
+        _navBarView = [[GFNavigationBarView alloc] initWithFrame:CGRectMake(0, 0, kPSYWidth, 64)];
+    }
+    return _navBarView;
+}
+
+- (UIView *)topView {
+    if (_topView == nil) {
+        _topView = [[UIView alloc] init];
+        _topView.backgroundColor = [UIColor blackColor];
+        _topView.alpha = 0.3f;
+    }
+    return _topView;
+}
+
+- (UIView *)leftView {
+    if (_leftView == nil) {
+        _leftView = [[UIView alloc] init];
+        _leftView.backgroundColor = [UIColor blackColor];
+        _leftView.alpha = 0.3f;
+    }
+    return _leftView;
+}
+
+- (UIView *)rightView {
+    if (_rightView == nil) {
+        _rightView = [[UIView alloc] init];
+        _rightView.backgroundColor = [UIColor blackColor];
+        _rightView.alpha = 0.3f;
+    }
+    return _rightView;
+}
+
+- (UIView *)bottomView {
+    if (_bottomView == nil) {
+        _bottomView = [[UIView alloc] init];
+        _bottomView.backgroundColor = [UIColor blackColor];
+        _bottomView.alpha = 0.3f;
+    }
+    return _bottomView;
+}
+
 
 @end

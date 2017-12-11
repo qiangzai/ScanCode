@@ -16,6 +16,22 @@
 
 @implementation GFNavigationBarView
 
+#pragma mark - life cycle
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self addSubview:self.effectView];
+        [self addSubview:self.titleLabel];
+        
+        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.mas_centerX);
+            make.bottom.equalTo(self.mas_bottom).with.offset(-10);
+        }];
+        
+    }
+    return self;
+}
+
 #pragma mark - setter / getter
 - (UIVisualEffectView *)effectView {
     if (_effectView == nil) {
@@ -27,8 +43,8 @@
 
 - (UILabel *)titleLabel {
     if (_titleLabel == nil) {
-//        _titleLabel = [PSYGeneralView createLabelFont:kPSYFont18 labelColor:kColorFFF];
-        _titleLabel.text = @"扫描徽章";
+        _titleLabel = [GFGeneralView createLabelFont:[UIFont systemFontOfSize:16] labelColor:[UIColor whiteColor]];
+        _titleLabel.text = @"扫描";
     }
     return _titleLabel;
 }
