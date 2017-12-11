@@ -27,6 +27,8 @@
     [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,8 +56,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    GFAboutViewController *abountVC = [[GFAboutViewController alloc] init];
-    [self.navigationController pushViewController:abountVC animated:YES];
+    if (indexPath.row == 0) {
+        GFAboutViewController *abountVC = [[GFAboutViewController alloc] init];
+        [self.navigationController pushViewController:abountVC animated:YES];
+    } else if (indexPath.row == 1) {
+//        UIImage *image = [UIImage imageNamed:@"Icon180.png"];
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[NSURL URLWithString:@"www.baidu.com"],@"我发现一个好玩的App"] applicationActivities:nil];
+        activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
+            if (completed) {
+                NSLog(@"确定分享");
+            }
+        };
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
+    
 }
 
 #pragma mark - setter and getter
@@ -73,7 +87,7 @@
 - (NSArray *)listArray {
     if (_listArray == nil) {
         NSString *strVersion = [NSString stringWithFormat:@"版本： %@",[Utility getLocalAppVersion]];
-        _listArray = [[NSArray alloc] initWithObjects:@"关于安全二维码",strVersion, nil];
+        _listArray = [[NSArray alloc] initWithObjects:@"关于安全二维码",@"告诉朋友",strVersion, nil];
     }
     return _listArray;
 }
