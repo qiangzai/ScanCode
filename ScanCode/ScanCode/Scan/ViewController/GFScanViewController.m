@@ -11,7 +11,7 @@
 #import "GFNavigationBarView.h"
 #import "UIImage+PSYTint.h"
 
-@interface GFScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
+@interface GFScanViewController ()<AVCaptureMetadataOutputObjectsDelegate, GFNavigationBarViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) AVCaptureDevice *device;
 @property (nonatomic, strong) AVCaptureDeviceInput *input;
 @property (nonatomic, strong) AVCaptureMetadataOutput *output;
@@ -186,11 +186,77 @@ static float scanWidth = 221.0f;
     }];
     
 //    [self.session stopRunning];
-    
-    
-    
 }
 
+#pragma mark - GFNavigationBarViewDelegate
+- (void)didSelectFlash {
+//    self.navBarView.flashBtn
+    if ([self.device hasTorch] && [self.device hasFlash]) {
+        [self.device lockForConfiguration:nil];
+        self.navBarView.flashBtn.selected = !self.navBarView.flashBtn.selected;
+        if (self.navBarView.flashBtn.selected) {
+            [self.device setTorchMode:AVCaptureTorchModeOn];
+            [self.device setFlashMode:AVCaptureFlashModeOn];
+        } else {
+            [self.device setTorchMode:AVCaptureTorchModeOff];
+            [self.device setFlashMode:AVCaptureFlashModeOff];
+        }
+        [self.device unlockForConfiguration];
+    } else {
+        [GFAlertController presentAlertViewForController:self title:@"提示" message:@"当前设备没有闪光灯" confirmTitle:@"我知道了" handler:^{
+            
+        }];
+    }
+}
+
+- (void)didSelectPhoto {
+    
+    UIImagePickerController *pickerVC = [[UIImagePickerController alloc] init];
+    pickerVC.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    pickerVC.delegate = self;
+    [self presentViewController:pickerVC animated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    CIImage *ciImage = [[CIImage alloc] initWithCGImage:image.CGImage];
+    if (ciImage) {
+        CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+        NSArray *features = [detector featuresInImage:ciImage];
+        if ([features count] > 0) {
+            for (CIFeature *feature in features) {
+                if (![feature isKindOfClass:[CIQRCodeFeature class]]) {
+                    continue;
+                }
+                CIQRCodeFeature *qrFeature = (CIQRCodeFeature *)feature;
+                NSString *code = qrFeature.messageString;
+                NSLog(@"读取到的数据是 = %@",code);
+                [GFAlertController presentAlertViewForController:self title:@"读取成功" message:code cancelTitle:@"取消" confirmTitle:@"复制此信息" cancel:^{
+                    
+                } confirm:^{
+                    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+                    pasteboard.string = code;
+                    
+                }];
+            }
+        } else {
+            [GFAlertController presentAlertViewForController:self title:@"提示" message:@"未读取到信息" confirmTitle:@"我知道了" handler:^{
+                
+            }];
+        }
+    } else {
+        [GFAlertController presentAlertViewForController:self title:@"提示" message:@"未读取到信息" confirmTitle:@"我知道了" handler:^{
+            
+        }];
+    }
+    
+}
 
 #pragma mark - setter and getter
 - (AVCaptureDevice *)device {
@@ -229,6 +295,7 @@ static float scanWidth = 221.0f;
 - (AVCaptureSession *)session {
     if (_session == nil) {
         _session = [[AVCaptureSession alloc] init];
+        [_session setSessionPreset:AVCaptureSessionPreset1920x1080];
     }
     return _session;
 }
@@ -243,7 +310,7 @@ static float scanWidth = 221.0f;
 
 - (UIImageView *)scanImgView {
     if (_scanImgView == nil) {
-        _scanImgView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"badge-scan"] imageWithTintColor:kPSYColorWithHex(0x1e9e2e)]];
+        _scanImgView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"badge-scan"] imageWithTintColor:kColorMain]];
         _scanImgView.frame = CGRectMake((kPSYWidth - scanWidth) / 2, (kPSYHeight - scanWidth) / 2, scanWidth, scanWidth);
     }
     return _scanImgView;
@@ -252,7 +319,7 @@ static float scanWidth = 221.0f;
 - (UIImageView *)lineImgView {
     if (_lineImgView == nil) {
         _lineImgView = [[UIImageView alloc] init];
-        _lineImgView.image = [[UIImage imageNamed:@"badge-scan-line"] imageWithTintColor:kPSYColorWithHex(0x1e9e2e)];
+        _lineImgView.image = [[UIImage imageNamed:@"badge-scan-line"] imageWithTintColor:kColorMain];
         _lineImgView.frame = CGRectMake(0, 0, scanWidth, kPSYFitSize(7));
         _lineImgView.center = CGPointMake(kPSYWidth / 2, (kPSYHeight - scanWidth) / 2);
     }
@@ -270,6 +337,7 @@ static float scanWidth = 221.0f;
 - (GFNavigationBarView *)navBarView {
     if (_navBarView == nil) {
         _navBarView = [[GFNavigationBarView alloc] initWithFrame:CGRectMake(0, 0, kPSYWidth, 64)];
+        _navBarView.delegate = self;
     }
     return _navBarView;
 }

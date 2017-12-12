@@ -36,6 +36,48 @@
     // Dispose of any resources that can be recreated.
 }
 
+/** 生成指定大小的黑白二维码 */
+- (UIImage *)createQRImageWithString:(NSString *)string size:(CGSize)size
+{
+    NSData *stringData = [string dataUsingEncoding:NSUTF8StringEncoding];
+    
+    CIFilter *qrFilter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    //    NSLog(@"%@",qrFilter.inputKeys);
+    [qrFilter setValue:stringData forKey:@"inputMessage"];
+    [qrFilter setValue:@"M" forKey:@"inputCorrectionLevel"];
+    
+    CIImage *qrImage = qrFilter.outputImage;
+    //放大并绘制二维码 (上面生成的二维码很小，需要放大)
+    CGImageRef cgImage = [[CIContext contextWithOptions:nil] createCGImage:qrImage fromRect:qrImage.extent];
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetInterpolationQuality(context, kCGInterpolationNone);
+    //翻转一下图片 不然生成的QRCode就是上下颠倒的
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextDrawImage(context, CGContextGetClipBoundingBox(context), cgImage);
+    UIImage *codeImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    CGImageRelease(cgImage);
+    
+    return codeImage;
+}
+
+/** 为二维码改变颜色 */
+- (UIImage *)changeColorForQRImage:(UIImage *)image backColor:(UIColor *)backColor frontColor:(UIColor *)frontColor
+{
+    CIFilter *colorFilter = [CIFilter filterWithName:@"CIFalseColor"
+                                       keysAndValues:
+                             @"inputImage",[CIImage imageWithCGImage:image.CGImage],
+                             @"inputColor0",[CIColor colorWithCGColor:frontColor.CGColor],
+                             @"inputColor1",[CIColor colorWithCGColor:backColor.CGColor],
+                             nil];
+    
+    return [UIImage imageWithCIImage:colorFilter.outputImage];
+}
+
+
+
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -49,6 +91,12 @@
     GFMineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[GFMineTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    
+    if (indexPath.row + 1 == self.listArray.count) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     cell.nameLabel.text = self.listArray[indexPath.row];
     

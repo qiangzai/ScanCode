@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GFNavigationBarViewDelegate <NSObject>
+
+- (void)didSelectFlash;
+
+- (void)didSelectPhoto;
+
+@end
+
 @interface GFNavigationBarView : UIView
+
+@property (nonatomic, strong) UIButton *flashBtn;
+@property (nonatomic, assign) id<GFNavigationBarViewDelegate> delegate;
+
 
 @end

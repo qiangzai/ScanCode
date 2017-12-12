@@ -27,19 +27,19 @@
     if (self) {
         GFScanViewController *scanVC = [[GFScanViewController alloc] init];
         scanVC.tabBarItem.image = [UIImage imageNamed:@"scan"];
-        scanVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"scan"] imageWithTintColor:kPSYColorWithHex(0x1e9e2e)];
+        scanVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"scan"] imageWithTintColor:kColorMain];
         scanVC.tabBarItem.title = @"扫描";
         
         GFMineViewController *mineVC = [[GFMineViewController alloc] init];
         mineVC.tabBarItem.image = [UIImage imageNamed:@"setup"];
-        mineVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"setup"] imageWithTintColor:kPSYColorWithHex(0x1e9e2e)];
+        mineVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"setup"] imageWithTintColor:kColorMain];
         mineVC.tabBarItem.title = @"设置";
         
         self.viewControllers = [NSArray arrayWithObjects:scanVC,mineVC,nil];
         self.selectedIndex = 0;
         self.tabBar.translucent = YES;
         self.delegate = self;
-        self.tabBar.tintColor = kPSYColorWithHex(0x1e9e2e);
+        self.tabBar.tintColor = kColorMain;
     }
     return self;
 }

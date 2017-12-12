@@ -23,6 +23,6 @@
 #define kColor333           kPSYColorWithHex(0x333333)
 #define kColor666           kPSYColorWithHex(0x666666)
 #define kColor999           kPSYColorWithHex(0x999999)
-
+#define kColorMain          kPSYColorWithHex(0x1e9e2e)
 
 #endif /* GFDefine_h */
