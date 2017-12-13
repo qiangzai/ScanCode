@@ -105,9 +105,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
+        
+    } else if (indexPath.row == 1) {
         GFAboutViewController *abountVC = [[GFAboutViewController alloc] init];
         [self.navigationController pushViewController:abountVC animated:YES];
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.row == 2) {
 //        UIImage *image = [UIImage imageNamed:@"Icon180.png"];
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[NSURL URLWithString:@"www.baidu.com"],@"感觉不怎么好用呢"] applicationActivities:nil];
         activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
@@ -135,7 +137,7 @@
 - (NSArray *)listArray {
     if (_listArray == nil) {
         NSString *strVersion = [NSString stringWithFormat:@"版本： %@",[Utility getLocalAppVersion]];
-        _listArray = [[NSArray alloc] initWithObjects:@"关于安全二维码",@"告诉朋友",strVersion, nil];
+        _listArray = [[NSArray alloc] initWithObjects:@"生成二维码",@"关于安全二维码",@"告诉朋友",strVersion, nil];
     }
     return _listArray;
 }

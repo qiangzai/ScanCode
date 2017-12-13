@@ -33,6 +33,7 @@
 		299D25481FCEE9D100418BFE /* GFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299D25471FCEE9D100418BFE /* GFBaseNavigationController.m */; };
 		4E491A01CCD43C945DAA91E1 /* libPods-ScanCodeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C768F678641CAAB4F298E0 /* libPods-ScanCodeTests.a */; };
 		725CE9CE3786D04F937C1DC2 /* libPods-ScanCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D7BFD07D7B16468AE6F5 /* libPods-ScanCode.a */; };
+		D548BBA11FE1232B004EE760 /* GFCreateCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D548BBA01FE1232B004EE760 /* GFCreateCodeViewController.m */; };
 		D5B680441FDE56C100C1B7AF /* GFAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B680431FDE56C100C1B7AF /* GFAlertController.m */; };
 		D5B680471FDE59C900C1B7AF /* GFGeneralView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B680461FDE59C900C1B7AF /* GFGeneralView.m */; };
 		D5B6804A1FDE6AE100C1B7AF /* GFMineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B680491FDE6AE100C1B7AF /* GFMineTableViewCell.m */; };
@@ -119,6 +120,8 @@
 		8C3B27F5D4484332CEC61647 /* Pods-ScanCodeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCodeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCodeUITests/Pods-ScanCodeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A4080C93D769AF77A0466850 /* Pods-ScanCodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCodeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCodeTests/Pods-ScanCodeTests.release.xcconfig"; sourceTree = "<group>"; };
 		B55DB8F5D11F6C9D9A9E58A1 /* Pods-ScanCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCode/Pods-ScanCode.debug.xcconfig"; sourceTree = "<group>"; };
+		D548BB9F1FE1232B004EE760 /* GFCreateCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFCreateCodeViewController.h; sourceTree = "<group>"; };
+		D548BBA01FE1232B004EE760 /* GFCreateCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFCreateCodeViewController.m; sourceTree = "<group>"; };
 		D5B680411FDE522200C1B7AF /* GFDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFDefine.h; sourceTree = "<group>"; };
 		D5B680421FDE56C100C1B7AF /* GFAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFAlertController.h; sourceTree = "<group>"; };
 		D5B680431FDE56C100C1B7AF /* GFAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFAlertController.m; sourceTree = "<group>"; };
@@ -348,6 +351,8 @@
 			children = (
 				296BA7A11FD7EE2A002712DF /* GFMineViewController.h */,
 				296BA7A21FD7EE2A002712DF /* GFMineViewController.m */,
+				D548BB9F1FE1232B004EE760 /* GFCreateCodeViewController.h */,
+				D548BBA01FE1232B004EE760 /* GFCreateCodeViewController.m */,
 				D5B680501FDE716E00C1B7AF /* GFAboutViewController.h */,
 				D5B680511FDE716E00C1B7AF /* GFAboutViewController.m */,
 			);
@@ -744,6 +749,7 @@
 				299D25421FCEE8CD00418BFE /* GFBaseViewController.m in Sources */,
 				D5B680441FDE56C100C1B7AF /* GFAlertController.m in Sources */,
 				D5B680471FDE59C900C1B7AF /* GFGeneralView.m in Sources */,
+				D548BBA11FE1232B004EE760 /* GFCreateCodeViewController.m in Sources */,
 				296BA7A01FD7EE15002712DF /* GFScanModel.m in Sources */,
 				296BA7911FD7EAFB002712DF /* GFBaseModel.m in Sources */,
 				299D25481FCEE9D100418BFE /* GFBaseNavigationController.m in Sources */,
