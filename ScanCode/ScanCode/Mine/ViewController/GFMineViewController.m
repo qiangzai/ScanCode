@@ -110,7 +110,7 @@
     } else if (indexPath.row == 1) {
         NSString *textToShare = @"安全二维码";
         UIImage *imageToShare = [UIImage imageNamed:@"Icon180.png"];
-        NSURL *urlToShare = [NSURL URLWithString:@"https://www.baidu.com"];
+        NSURL *urlToShare = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/安全二维码/id1326611397?l=zh&ls=1&mt=8"];
         NSArray *activityItems = @[urlToShare,textToShare,imageToShare];
         
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
