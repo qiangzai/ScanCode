@@ -531,7 +531,7 @@
 				TargetAttributes = {
 					2984F88E1FB938E4009DF65E = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					2984F8A61FB938E4009DF65E = {
 						CreatedOnToolsVersion = 9.1;
@@ -939,7 +939,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T97J2352DH;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanCode/ScanCodePrefixHeader.pch";
 				INFOPLIST_FILE = ScanCode/Info.plist;
@@ -947,6 +947,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzq.ScanCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "69c5d316-892a-421d-bc90-f6db0be22f0b";
+				PROVISIONING_PROFILE_SPECIFIER = lzq2018;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -957,7 +959,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T97J2352DH;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanCode/ScanCodePrefixHeader.pch";
 				INFOPLIST_FILE = ScanCode/Info.plist;
@@ -965,6 +967,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzq.ScanCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "69c5d316-892a-421d-bc90-f6db0be22f0b";
+				PROVISIONING_PROFILE_SPECIFIER = lzq2018;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

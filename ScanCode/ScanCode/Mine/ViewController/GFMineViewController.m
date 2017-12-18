@@ -110,13 +110,27 @@
         GFAboutViewController *abountVC = [[GFAboutViewController alloc] init];
         [self.navigationController pushViewController:abountVC animated:YES];
     } else if (indexPath.row == 2) {
-//        UIImage *image = [UIImage imageNamed:@"Icon180.png"];
-        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[NSURL URLWithString:@"www.baidu.com"],@"感觉不怎么好用呢"] applicationActivities:nil];
+        NSString *textToShare = @"安全二维码";
+        UIImage *imageToShare = [UIImage imageNamed:@"Icon180.png"];
+        NSURL *urlToShare = [NSURL URLWithString:@"https://www.baidu.com"];
+        NSArray *activityItems = @[urlToShare,textToShare,imageToShare];
+        
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
         activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
             if (completed) {
                 NSLog(@"确定分享");
+            } else {
+                NSLog(@"分享失败");
             }
         };
+//        UIActivityViewControllerCompletionWithItemsHandler myBlock = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
+//            if (completed) {
+//                NSLog(@"完成分享");
+//            } else {
+//                NSLog(@"分享失败");
+//            }
+//        };
+        
         [self presentViewController:activityVC animated:YES completion:nil];
     }
     
