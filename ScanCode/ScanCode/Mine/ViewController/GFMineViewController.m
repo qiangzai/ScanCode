@@ -105,32 +105,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        
-    } else if (indexPath.row == 1) {
         GFAboutViewController *abountVC = [[GFAboutViewController alloc] init];
         [self.navigationController pushViewController:abountVC animated:YES];
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == 1) {
         NSString *textToShare = @"安全二维码";
         UIImage *imageToShare = [UIImage imageNamed:@"Icon180.png"];
         NSURL *urlToShare = [NSURL URLWithString:@"https://www.baidu.com"];
         NSArray *activityItems = @[urlToShare,textToShare,imageToShare];
         
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-        activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
-            if (completed) {
-                NSLog(@"确定分享");
-            } else {
-                NSLog(@"分享失败");
-            }
-        };
-//        UIActivityViewControllerCompletionWithItemsHandler myBlock = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
-//            if (completed) {
-//                NSLog(@"完成分享");
-//            } else {
-//                NSLog(@"分享失败");
-//            }
-//        };
-        
         [self presentViewController:activityVC animated:YES completion:nil];
     }
     
@@ -151,7 +134,7 @@
 - (NSArray *)listArray {
     if (_listArray == nil) {
         NSString *strVersion = [NSString stringWithFormat:@"版本： %@",[Utility getLocalAppVersion]];
-        _listArray = [[NSArray alloc] initWithObjects:@"生成二维码",@"关于安全二维码",@"告诉朋友",strVersion, nil];
+        _listArray = [[NSArray alloc] initWithObjects:@"关于安全二维码",@"告诉朋友",strVersion, nil];
     }
     return _listArray;
 }
