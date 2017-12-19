@@ -39,7 +39,7 @@
     if (_tipLabel == nil) {
         _tipLabel = [GFGeneralView createLabelFont:[UIFont systemFontOfSize:16] labelColor:kColor333];
         _tipLabel.numberOfLines = 0;
-        _tipLabel.text = @"二维码给我们的生活提供了方便，但是也有扫描二维码造成资金损失的案例，此App旨在解决直接扫描二维码";
+        _tipLabel.text = @"二维码给我们的生活提供了各种方便，但是扫描二维码造成资金损失的例子也有很多，在此告诫大家，千万不要随意扫描陌生人分享出来的二维码，如果遇到可疑的二维码，可先使用一些二维码扫描工具，扫描看看此二维码指向的链接是否正确，如果发现可疑链接，建议不要轻易进行登录、转账等等操作！在此环境下，我们开发了此款App，希望能给你们提供一点帮助。";
     }
     return _tipLabel;
 }
