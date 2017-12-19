@@ -24,6 +24,10 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>需要允许使用相机才能扫描二维码</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>需要允许访问相册才能扫描相册里的二维码</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>需要允许访问相册才能扫描相册里的二维码</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
