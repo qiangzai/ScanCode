@@ -24,4 +24,21 @@
  */
 + (UIViewController *)getCurrentVC;
 
+/**
+ 是否是网络链接
+
+ @param url 传入要验证的字符
+ @return YES是网络链接 NO不是
+ */
++ (BOOL)isInterNet:(NSString *)url;
+
+/**
+ 是否是纯数字
+
+ @param url 传入要验证的字符
+ @return YES是纯数字 NO不是
+ */
++ (BOOL)isNumber:(NSString *)url;
+
+
 @end

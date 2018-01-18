@@ -57,4 +57,24 @@
     return currentVC;
 }
 
++ (BOOL)isInterNet:(NSString *)url {
+    if ([url hasPrefix:@"http://"] || [url hasPrefix:@"https://"] || [url hasPrefix:@"www."]) {
+        return YES;
+    } else {
+        return NO;
+    }
+    
+}
+
++ (BOOL)isNumber:(NSString *)url {
+    NSString * regex        = @"^[0-9]*$";
+    NSPredicate * pred      = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    BOOL isMatch            = [pred evaluateWithObject:url];
+    if (isMatch) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
 @end

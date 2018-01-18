@@ -9,8 +9,9 @@
 #import "GFMineViewController.h"
 #import "GFMineTableViewCell.h"
 #import "GFAboutViewController.h"
+#import <StoreKit/StoreKit.h>
 
-@interface GFMineViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface GFMineViewController ()<UITableViewDelegate, UITableViewDataSource, SKStoreProductViewControllerDelegate>
 @property (nonatomic, strong) UITableView *mainTableView;
 @property (nonatomic, strong) NSArray *listArray;
 
@@ -35,48 +36,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/** 生成指定大小的黑白二维码 */
-- (UIImage *)createQRImageWithString:(NSString *)string size:(CGSize)size
-{
-    NSData *stringData = [string dataUsingEncoding:NSUTF8StringEncoding];
-    
-    CIFilter *qrFilter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
-    //    NSLog(@"%@",qrFilter.inputKeys);
-    [qrFilter setValue:stringData forKey:@"inputMessage"];
-    [qrFilter setValue:@"M" forKey:@"inputCorrectionLevel"];
-    
-    CIImage *qrImage = qrFilter.outputImage;
-    //放大并绘制二维码 (上面生成的二维码很小，需要放大)
-    CGImageRef cgImage = [[CIContext contextWithOptions:nil] createCGImage:qrImage fromRect:qrImage.extent];
-    UIGraphicsBeginImageContext(size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetInterpolationQuality(context, kCGInterpolationNone);
-    //翻转一下图片 不然生成的QRCode就是上下颠倒的
-    CGContextScaleCTM(context, 1.0, -1.0);
-    CGContextDrawImage(context, CGContextGetClipBoundingBox(context), cgImage);
-    UIImage *codeImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    CGImageRelease(cgImage);
-    
-    return codeImage;
-}
-
-/** 为二维码改变颜色 */
-- (UIImage *)changeColorForQRImage:(UIImage *)image backColor:(UIColor *)backColor frontColor:(UIColor *)frontColor
-{
-    CIFilter *colorFilter = [CIFilter filterWithName:@"CIFalseColor"
-                                       keysAndValues:
-                             @"inputImage",[CIImage imageWithCGImage:image.CGImage],
-                             @"inputColor0",[CIColor colorWithCGColor:frontColor.CGColor],
-                             @"inputColor1",[CIColor colorWithCGColor:backColor.CGColor],
-                             nil];
-    
-    return [UIImage imageWithCIImage:colorFilter.outputImage];
-}
-
-
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -110,12 +69,41 @@
     } else if (indexPath.row == 1) {
         NSString *textToShare = @"安全二维码";
         UIImage *imageToShare = [UIImage imageNamed:@"Icon180.png"];
-        NSURL *urlToShare = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/安全二维码/id1326611397?l=zh&ls=1&mt=8"];
+        NSString *urlStr = @"https://itunes.apple.com/cn/app/安全二维码/id1326611397?l=zh&ls=1&mt=8";
+        NSURL *urlToShare = [NSURL URLWithString:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         NSArray *activityItems = @[urlToShare,textToShare,imageToShare];
         
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
         [self presentViewController:activityVC animated:YES completion:nil];
+    } else if (indexPath.row == 2) {
+        
+        NSString *appId = @"1326611397";
+        // 创建对象
+        SKStoreProductViewController *storeVC = [[SKStoreProductViewController alloc] init];
+        // 设置代理
+        storeVC.delegate = self;
+        // 初始化参数
+        NSDictionary *dict = [NSDictionary dictionaryWithObject:appId forKey:SKStoreProductParameterITunesItemIdentifier];
+        // 跳转App Store页
+        [storeVC loadProductWithParameters:dict completionBlock:^(BOOL result, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"错误信息：%@",error.userInfo);
+            }
+            else
+            {
+                // 弹出模态视图
+                [self presentViewController:storeVC animated:YES completion:nil];
+            }
+        }];
     }
+    
+}
+
+#pragma mark - SKStoreProductViewControllerDelegate
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    [viewController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
     
 }
 
@@ -134,7 +122,7 @@
 - (NSArray *)listArray {
     if (_listArray == nil) {
         NSString *strVersion = [NSString stringWithFormat:@"版本： %@",[Utility getLocalAppVersion]];
-        _listArray = [[NSArray alloc] initWithObjects:@"关于安全二维码",@"告诉朋友",strVersion, nil];
+        _listArray = [[NSArray alloc] initWithObjects:@"关于安全二维码",@"告诉朋友",@"我要评分",strVersion, nil];
     }
     return _listArray;
 }

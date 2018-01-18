@@ -177,13 +177,55 @@ static float scanWidth = 221.0f;
     NSLog(@"code = %@",object.stringValue);
     NSString *code = object.stringValue;
     
-    [GFAlertController presentAlertViewForController:self title:@"扫描成功" message:code cancelTitle:@"取消" confirmTitle:@"复制此信息" cancel:^{
-        
-    } confirm:^{
-        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        pasteboard.string = code;
-        
-    }];
+//    [GFAlertController presentAlertViewForController:self title:@"扫描成功" message:code cancelTitle:@"取消" confirmTitle:@"复制此信息" cancel:^{
+//
+//    } confirm:^{
+//        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+//        pasteboard.string = code;
+//
+//    }];
+    
+  
+    if ([Utility isInterNet:code]) {
+        [GFAlertController presentAlertViewForController:self title:@"扫描成功" message:code actionTitles:@[@"打开链接",@"复制此信息"] preferredStyle:UIAlertControllerStyleActionSheet handler:^(NSUInteger buttonIndex, NSString *buttonTitle) {
+            if (buttonIndex == 1) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:code]];
+            } else if (buttonIndex == 2) {
+                UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+                pasteboard.string = code;
+            }
+        }];
+    } else if ([Utility isNumber:code]) {
+        [GFAlertController presentAlertViewForController:self title:@"扫描成功" message:code actionTitles:@[@"打电话",@"查快递",@"复制此信息"] preferredStyle:UIAlertControllerStyleActionSheet handler:^(NSUInteger buttonIndex, NSString *buttonTitle) {
+            if (buttonIndex == 1) {
+                NSString *phone = [NSString stringWithFormat:@"telprompt:%@",code];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phone]];
+            } else if (buttonIndex == 2) {
+//                https://www.baidu.com/s?wd=123456343
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.baidu.com/s?wd%@",code]]];
+            } else if (buttonIndex == 3) {
+                UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+                pasteboard.string = code;
+            }
+        }];
+    } else {
+        [GFAlertController presentAlertViewForController:self title:@"扫描成功" message:code actionTitles:@[@"打电话",@"打开链接",@"查快递",@"复制此信息"] preferredStyle:UIAlertControllerStyleActionSheet handler:^(NSUInteger buttonIndex, NSString *buttonTitle) {
+            if (buttonIndex == 1) {
+                NSString *phone = [NSString stringWithFormat:@"telprompt:%@",code];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phone]];
+            } else if (buttonIndex == 2) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:code]];
+            } else if (buttonIndex == 3) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.baidu.com/s?wd%@",code]]];
+            } else if (buttonIndex == 4) {
+                UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+                pasteboard.string = code;
+            }
+        }];
+    }
+    
+    
+    
     
 //    [self.session stopRunning];
 }

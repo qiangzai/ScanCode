@@ -10,6 +10,8 @@
 #import "GFScanViewController.h"
 #import "GFMineViewController.h"
 #import "UIImage+PSYTint.h"
+#import "GFCreateQRViewController.h"
+
 
 @interface GFTabBarController ()<UITabBarControllerDelegate>
 
@@ -30,12 +32,17 @@
         scanVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"scan"] imageWithTintColor:kColorMain];
         scanVC.tabBarItem.title = @"扫描";
         
+        GFCreateQRViewController *QRVC = [[GFCreateQRViewController alloc] init];
+        QRVC.tabBarItem.image = [UIImage imageNamed:@"QR"];
+        QRVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"QR"] imageWithTintColor:kColorMain];
+        QRVC.tabBarItem.title = @"生成二维码";
+        
         GFMineViewController *mineVC = [[GFMineViewController alloc] init];
         mineVC.tabBarItem.image = [UIImage imageNamed:@"setup"];
         mineVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"setup"] imageWithTintColor:kColorMain];
         mineVC.tabBarItem.title = @"设置";
         
-        self.viewControllers = [NSArray arrayWithObjects:scanVC,mineVC,nil];
+        self.viewControllers = [NSArray arrayWithObjects:scanVC,QRVC,mineVC,nil];
         self.selectedIndex = 0;
         self.tabBar.translucent = YES;
         self.delegate = self;
@@ -55,6 +62,8 @@
     if (tabBarController.selectedIndex == 0) {
         self.navigationItem.title = nil;
     } else if (tabBarController.selectedIndex == 1) {
+        self.navigationItem.title = @"生成二维码";
+    } else if (tabBarController.selectedIndex == 2) {
         self.navigationItem.title = @"设置";
     }
 }

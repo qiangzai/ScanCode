@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2928C2D81FEA07AC0029756B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2928C2D71FEA07AC0029756B /* Default-568h@2x.png */; };
+		293A74A8201069C2006B627F /* GFCreateQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293A74A7201069C2006B627F /* GFCreateQRViewController.m */; };
+		293A74AB20108003006B627F /* GFResultQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293A74AA20108003006B627F /* GFResultQRViewController.m */; };
 		296BA78E1FD7EAD6002712DF /* GFBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA78D1FD7EAD6002712DF /* GFBaseView.m */; };
 		296BA7911FD7EAFB002712DF /* GFBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7901FD7EAFB002712DF /* GFBaseModel.m */; };
 		296BA7941FD7EB43002712DF /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BA7931FD7EB43002712DF /* Utility.m */; };
@@ -32,6 +34,7 @@
 		299D25421FCEE8CD00418BFE /* GFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299D25411FCEE8CD00418BFE /* GFBaseViewController.m */; };
 		299D25451FCEE97C00418BFE /* UINavigationController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 299D25441FCEE97C00418BFE /* UINavigationController+Additions.m */; };
 		299D25481FCEE9D100418BFE /* GFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299D25471FCEE9D100418BFE /* GFBaseNavigationController.m */; };
+		29A461F91FFCA60E00DFDAEC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A461F81FFCA60E00DFDAEC /* StoreKit.framework */; };
 		4E491A01CCD43C945DAA91E1 /* libPods-ScanCodeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C768F678641CAAB4F298E0 /* libPods-ScanCodeTests.a */; };
 		725CE9CE3786D04F937C1DC2 /* libPods-ScanCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D7BFD07D7B16468AE6F5 /* libPods-ScanCode.a */; };
 		D548BBA11FE1232B004EE760 /* GFCreateCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D548BBA01FE1232B004EE760 /* GFCreateCodeViewController.m */; };
@@ -67,6 +70,10 @@
 		07D9D7BFD07D7B16468AE6F5 /* libPods-ScanCode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanCode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C768F678641CAAB4F298E0 /* libPods-ScanCodeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScanCodeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2928C2D71FEA07AC0029756B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		293A74A6201069C2006B627F /* GFCreateQRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFCreateQRViewController.h; sourceTree = "<group>"; };
+		293A74A7201069C2006B627F /* GFCreateQRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFCreateQRViewController.m; sourceTree = "<group>"; };
+		293A74A920108003006B627F /* GFResultQRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFResultQRViewController.h; sourceTree = "<group>"; };
+		293A74AA20108003006B627F /* GFResultQRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFResultQRViewController.m; sourceTree = "<group>"; };
 		296BA78C1FD7EAD6002712DF /* GFBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBaseView.h; sourceTree = "<group>"; };
 		296BA78D1FD7EAD6002712DF /* GFBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBaseView.m; sourceTree = "<group>"; };
 		296BA78F1FD7EAFB002712DF /* GFBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBaseModel.h; sourceTree = "<group>"; };
@@ -116,6 +123,7 @@
 		299D25441FCEE97C00418BFE /* UINavigationController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Additions.m"; sourceTree = "<group>"; };
 		299D25461FCEE9D100418BFE /* GFBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBaseNavigationController.h; sourceTree = "<group>"; };
 		299D25471FCEE9D100418BFE /* GFBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBaseNavigationController.m; sourceTree = "<group>"; };
+		29A461F81FFCA60E00DFDAEC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		48C530FDB7EE6A1B2A058415 /* Pods-ScanCodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCodeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCodeUITests/Pods-ScanCodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5885275CA8D64EAC0881D815 /* Pods-ScanCodeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCodeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCodeTests/Pods-ScanCodeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6AC7A6A479A0E3CDF236CD9D /* Pods-ScanCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScanCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScanCode/Pods-ScanCode.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A461F91FFCA60E00DFDAEC /* StoreKit.framework in Frameworks */,
 				725CE9CE3786D04F937C1DC2 /* libPods-ScanCode.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +182,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		293A74A220106980006B627F /* CreateQR */ = {
+			isa = PBXGroup;
+			children = (
+				293A74A320106980006B627F /* Model */,
+				293A74A420106980006B627F /* View */,
+				293A74A520106980006B627F /* ViewController */,
+			);
+			path = CreateQR;
+			sourceTree = "<group>";
+		};
+		293A74A320106980006B627F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		293A74A420106980006B627F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		293A74A520106980006B627F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				293A74A6201069C2006B627F /* GFCreateQRViewController.h */,
+				293A74A7201069C2006B627F /* GFCreateQRViewController.m */,
+				293A74A920108003006B627F /* GFResultQRViewController.h */,
+				293A74AA20108003006B627F /* GFResultQRViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		2984F8861FB938E4009DF65E = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +250,7 @@
 				299D254A1FCEEAC800418BFE /* History */,
 				299D254B1FCEEAC800418BFE /* Mine */,
 				299D25491FCEEAC800418BFE /* Scan */,
+				293A74A220106980006B627F /* CreateQR */,
 				2984F8E81FC562DC009DF65E /* Category */,
 				2984F8E91FC562DC009DF65E /* Networking */,
 				2984F8E71FC562DB009DF65E /* Utility */,
@@ -437,6 +482,7 @@
 		6C9624F93AAD730E2B19FF4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29A461F81FFCA60E00DFDAEC /* StoreKit.framework */,
 				07D9D7BFD07D7B16468AE6F5 /* libPods-ScanCode.a */,
 				14C768F678641CAAB4F298E0 /* libPods-ScanCodeTests.a */,
 				F59002A6F47AC0D1ED1D8B40 /* libPods-ScanCodeUITests.a */,
@@ -747,11 +793,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				296BA7B21FD7EE8E002712DF /* GFHistoryModel.m in Sources */,
+				293A74AB20108003006B627F /* GFResultQRViewController.m in Sources */,
 				D5B6804A1FDE6AE100C1B7AF /* GFMineTableViewCell.m in Sources */,
 				296BA7A61FD7EE3F002712DF /* GFMineView.m in Sources */,
 				299D25421FCEE8CD00418BFE /* GFBaseViewController.m in Sources */,
 				D5B680441FDE56C100C1B7AF /* GFAlertController.m in Sources */,
 				D5B680471FDE59C900C1B7AF /* GFGeneralView.m in Sources */,
+				293A74A8201069C2006B627F /* GFCreateQRViewController.m in Sources */,
 				D548BBA11FE1232B004EE760 /* GFCreateCodeViewController.m in Sources */,
 				296BA7A01FD7EE15002712DF /* GFScanModel.m in Sources */,
 				296BA7911FD7EAFB002712DF /* GFBaseModel.m in Sources */,
@@ -939,7 +987,7 @@
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ZhongQiang Li (KCN5Z7UBJB)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ZhongQiang Li (T97J2352DH)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T97J2352DH;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanCode/ScanCodePrefixHeader.pch";
@@ -948,8 +996,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzq.ScanCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "69c5d316-892a-421d-bc90-f6db0be22f0b";
-				PROVISIONING_PROFILE_SPECIFIER = lzq2018;
+				PROVISIONING_PROFILE = "a3c49f42-fe92-46f7-b258-a936f1cffd0a";
+				PROVISIONING_PROFILE_SPECIFIER = scancodeDis;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = arm64;
 			};
@@ -965,8 +1013,8 @@
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ZhongQiang Li (KCN5Z7UBJB)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZhongQiang Li (KCN5Z7UBJB)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ZhongQiang Li (T97J2352DH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZhongQiang Li (T97J2352DH)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T97J2352DH;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ScanCode/ScanCodePrefixHeader.pch";
@@ -975,8 +1023,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzq.ScanCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "69c5d316-892a-421d-bc90-f6db0be22f0b";
-				PROVISIONING_PROFILE_SPECIFIER = lzq2018;
+				PROVISIONING_PROFILE = "a3c49f42-fe92-46f7-b258-a936f1cffd0a";
+				PROVISIONING_PROFILE_SPECIFIER = scancodeDis;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = arm64;
 			};
