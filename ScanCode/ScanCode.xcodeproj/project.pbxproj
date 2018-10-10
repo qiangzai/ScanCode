@@ -514,8 +514,6 @@
 				2984F88B1FB938E4009DF65E /* Sources */,
 				2984F88C1FB938E4009DF65E /* Frameworks */,
 				2984F88D1FB938E4009DF65E /* Resources */,
-				E25F87243194760C1754BA46 /* [CP] Embed Pods Frameworks */,
-				E2241AE91201F22BC2E564B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -534,8 +532,6 @@
 				2984F8A31FB938E4009DF65E /* Sources */,
 				2984F8A41FB938E4009DF65E /* Frameworks */,
 				2984F8A51FB938E4009DF65E /* Resources */,
-				ABAD75B22673971B4AD33A78 /* [CP] Embed Pods Frameworks */,
-				1538115D51E7B634C2BC3C2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -555,8 +551,6 @@
 				2984F8AE1FB938E4009DF65E /* Sources */,
 				2984F8AF1FB938E4009DF65E /* Frameworks */,
 				2984F8B01FB938E4009DF65E /* Resources */,
-				F826F8C2F8F3D392073C50F6 /* [CP] Embed Pods Frameworks */,
-				DBF890337F30112F0B741BDB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -641,36 +635,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1538115D51E7B634C2BC3C2E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanCodeTests/Pods-ScanCodeTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ABAD75B22673971B4AD33A78 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanCodeTests/Pods-ScanCodeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D528EE754CB438795A1A0269 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -689,51 +653,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DBF890337F30112F0B741BDB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanCodeUITests/Pods-ScanCodeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E2241AE91201F22BC2E564B9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanCode/Pods-ScanCode-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E25F87243194760C1754BA46 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanCode/Pods-ScanCode-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E80DB5C941E5E88F87121033 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -750,21 +669,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F826F8C2F8F3D392073C50F6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanCodeUITests/Pods-ScanCodeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE59C05AA3F0FBADB46C9693 /* [CP] Check Pods Manifest.lock */ = {
@@ -994,10 +898,10 @@
 				INFOPLIST_FILE = ScanCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lzq.ScanCode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enshi.jiyinh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a3c49f42-fe92-46f7-b258-a936f1cffd0a";
-				PROVISIONING_PROFILE_SPECIFIER = scancodeDis;
+				PROVISIONING_PROFILE = "29d44c0e-5059-481e-a16f-b8a0413479cb";
+				PROVISIONING_PROFILE_SPECIFIER = jiyinDist;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = arm64;
 			};
@@ -1021,10 +925,10 @@
 				INFOPLIST_FILE = ScanCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lzq.ScanCode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enshi.jiyinh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a3c49f42-fe92-46f7-b258-a936f1cffd0a";
-				PROVISIONING_PROFILE_SPECIFIER = scancodeDis;
+				PROVISIONING_PROFILE = "29d44c0e-5059-481e-a16f-b8a0413479cb";
+				PROVISIONING_PROFILE_SPECIFIER = jiyinDist;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = arm64;
 			};
